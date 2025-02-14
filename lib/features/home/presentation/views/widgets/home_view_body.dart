@@ -24,7 +24,7 @@ class HomeView extends StatelessWidget {
           Text(
             textAlign: TextAlign.left,
             "Best Seller",
-            style: Styles.titleMedium,
+            style: Styles.textStyle18,
           ),
           BestSellerListViewItem()
         ],
