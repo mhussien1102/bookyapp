@@ -12,19 +12,22 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomAppBar(),
           FeaturedListView(),
           SizedBox(
-            height: 15,
+            height: 50,
           ),
           Text(
             textAlign: TextAlign.left,
             "Best Seller",
             style: Styles.textStyle18,
+          ),
+          SizedBox(
+            height: 20,
           ),
           BestSellerListViewItem()
         ],
@@ -51,8 +54,24 @@ class BestSellerListViewItem extends StatelessWidget {
                       image: AssetImage(AssetsData.book1), fit: BoxFit.fill)),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Column(
-            children: [],
+            children: [
+              SizedBox(
+                width: 20,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .5,
+                child: Text(
+                  "Harry potter and the Goblat of fire",
+                  style: Styles.textStyle20,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
           )
         ],
       ),
