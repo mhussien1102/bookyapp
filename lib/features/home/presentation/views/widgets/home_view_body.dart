@@ -1,5 +1,6 @@
 import 'package:bookyapp/core/utils/assets.dart';
 import 'package:bookyapp/core/utils/style.dart';
+import 'package:bookyapp/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/custom_list_view_item.dart';
@@ -12,27 +13,41 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          FeaturedListView(),
-          SizedBox(
-            height: 50,
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: CustomAppBar(),
+              ),
+              FeaturedListView(),
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  textAlign: TextAlign.left,
+                  "Best Seller",
+                  style: Styles.textStyle18,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
           ),
-          Text(
-            textAlign: TextAlign.left,
-            "Best Seller",
-            style: Styles.textStyle18,
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: BestSellerListView(),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          BestSellerListViewItem()
-        ],
-      ),
+        )
+      ],
     );
   }
 }
