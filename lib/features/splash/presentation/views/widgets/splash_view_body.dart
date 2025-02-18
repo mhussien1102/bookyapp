@@ -1,7 +1,6 @@
 import 'package:bookyapp/features/splash/presentation/views/widgets/sliding_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/assets.dart';
@@ -62,11 +61,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigator_home() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(
-        duration: primaryDuration,
-        () => const Home(),
-        transition: Transition.rightToLeft,
-      );
+      // Get.to(
+      //   duration: primaryDuration,
+      //   () => const Home(),
+      //   transition: Transition.rightToLeft,
+      // );
+      GoRouter.of(context).push('/home');
     });
   }
 }
