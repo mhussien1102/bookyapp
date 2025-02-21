@@ -1,6 +1,7 @@
 import 'package:bookyapp/features/home/presentation/views/widgets/customBookDeatilsAppBar.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/style.dart';
 import 'custom_list_view_item.dart';
 
 class BookViewDetailsBody extends StatelessWidget {
@@ -16,9 +17,21 @@ class BookViewDetailsBody extends StatelessWidget {
         children: [
           CustomBookDeatialsAppBar(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .17),
+            padding: EdgeInsets.symmetric(horizontal: width * .2),
             child: CustomListViewItem(),
-          )
+          ),
+          SizedBox(
+            height: 43,
+          ),
+          Text("The Jungle Book", style: Styles.textStyle30),
+          SizedBox(
+            height: 6,
+          ),
+          Text("Richard Klyping",
+              style: Styles.textStyle18.copyWith(
+                color: Colors.grey,
+                fontStyle: FontStyle.italic,
+              )),
         ],
       ),
     );
