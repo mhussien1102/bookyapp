@@ -1,3 +1,4 @@
+import 'package:bookyapp/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/customBookDeatilsAppBar.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,12 @@ class BookViewDetailsBody extends StatelessWidget {
                 color: Colors.grey,
                 fontStyle: FontStyle.italic,
               )),
+          SizedBox(
+            height: 18,
+          ),
+          BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ],
       ),
     );
