@@ -14,56 +14,63 @@ class BookViewDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
-        children: [
-          CustomBookDeatialsAppBar(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: CustomListViewItem(),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              children: [
+                CustomBookDeatialsAppBar(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * .2),
+                  child: CustomListViewItem(),
+                ),
+                SizedBox(
+                  height: 43,
+                ),
+                Text("The Jungle Book", style: Styles.textStyle30),
+                SizedBox(
+                  height: 6,
+                ),
+                Text("Richard Klyping",
+                    style: Styles.textStyle18.copyWith(
+                      color: Colors.grey,
+                      fontStyle: FontStyle.italic,
+                    )),
+                SizedBox(
+                  height: 18,
+                ),
+                BookRating(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                const SizedBox(
+                  height: 37,
+                ),
+                BookActionBButton(),
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text("you can also like",
+                      style: Styles.textStyle14
+                          .copyWith(fontWeight: FontWeight.w600)),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SimilarBookListView(),
+                SizedBox(
+                  height: 40,
+                )
+              ],
+            ),
           ),
-          SizedBox(
-            height: 43,
-          ),
-          Text("The Jungle Book", style: Styles.textStyle30),
-          SizedBox(
-            height: 6,
-          ),
-          Text("Richard Klyping",
-              style: Styles.textStyle18.copyWith(
-                color: Colors.grey,
-                fontStyle: FontStyle.italic,
-              )),
-          SizedBox(
-            height: 18,
-          ),
-          BookRating(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          const SizedBox(
-            height: 37,
-          ),
-          BookActionBButton(),
-          SizedBox(
-            height: 50,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text("you can also like",
-                style:
-                    Styles.textStyle14.copyWith(fontWeight: FontWeight.w600)),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          SimilarBookListView(),
-          SizedBox(
-            height: 40,
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
