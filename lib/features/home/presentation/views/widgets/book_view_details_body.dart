@@ -2,6 +2,7 @@ import 'package:bookyapp/core/widgets/custom_button.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/book_action_button.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/customBookDeatilsAppBar.dart';
+import 'package:bookyapp/features/home/presentation/views/widgets/similiar_list_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/style.dart';
@@ -45,6 +46,22 @@ class BookViewDetailsBody extends StatelessWidget {
             height: 37,
           ),
           BookActionBButton(),
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text("you can also like",
+                style:
+                    Styles.textStyle14.copyWith(fontWeight: FontWeight.w600)),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          SimilarBookListView(),
+          SizedBox(
+            height: 40,
+          )
         ],
       ),
     );
