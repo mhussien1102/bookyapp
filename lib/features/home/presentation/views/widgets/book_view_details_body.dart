@@ -13,7 +13,6 @@ class BookViewDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -21,29 +20,7 @@ class BookViewDetailsBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                CustomBookDeatialsAppBar(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * .2),
-                  child: CustomListViewItem(),
-                ),
-                SizedBox(
-                  height: 43,
-                ),
-                Text("The Jungle Book", style: Styles.textStyle30),
-                SizedBox(
-                  height: 6,
-                ),
-                Text("Richard Klyping",
-                    style: Styles.textStyle18.copyWith(
-                      color: Colors.grey,
-                      fontStyle: FontStyle.italic,
-                    )),
-                SizedBox(
-                  height: 18,
-                ),
-                BookRating(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
+                BookDetailsSections(),
                 const SizedBox(
                   height: 37,
                 ),
@@ -69,6 +46,43 @@ class BookViewDetailsBody extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ],
+    );
+  }
+}
+
+class BookDetailsSections extends StatelessWidget {
+  const BookDetailsSections({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+
+    return Column(
+      children: [
+        CustomBookDeatialsAppBar(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * .2),
+          child: CustomListViewItem(),
+        ),
+        SizedBox(
+          height: 43,
+        ),
+        Text("The Jungle Book", style: Styles.textStyle30),
+        SizedBox(
+          height: 6,
+        ),
+        Text("Richard Klyping",
+            style: Styles.textStyle18.copyWith(
+              color: Colors.grey,
+              fontStyle: FontStyle.italic,
+            )),
+        SizedBox(
+          height: 18,
+        ),
+        BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
         ),
       ],
     );
