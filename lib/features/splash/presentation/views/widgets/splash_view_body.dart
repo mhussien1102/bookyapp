@@ -60,12 +60,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigator_home() {
-    Future.delayed(Duration(seconds: 3), () {
-      // Get.to(
-      //   duration: primaryDuration,
-      //   () => const Home(),
-      //   transition: Transition.rightToLeft,
-      // );
+    Future.delayed(const Duration(seconds: 3), () {
+      if (!mounted) return; // ✅ Check if the widget is still mounted
       GoRouter.of(context).push('/home');
     });
   }

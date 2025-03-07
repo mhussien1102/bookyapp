@@ -1,8 +1,9 @@
-import 'package:bookyapp/core/errors/failure.dart';
+import 'dart:async';
 import 'package:bookyapp/features/home/domain/entites/book_entity.dart';
 import 'package:dartz/dartz.dart';
+import 'package:bookyapp/core/errors/failure.dart';
 
 abstract class HomeRepo {
   Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks();
-  Future<Either<Failure, List<BookEntity>>> fetchNewsBooks();
+  Future<Either<Failure, List<BookEntity>>> fetchNewBooks();
 }
