@@ -2,10 +2,11 @@ import 'package:bookyapp/features/home/data/models/book_model/equb.dart';
 import 'package:bookyapp/features/home/data/models/book_model/saleInfo.dart';
 import 'package:bookyapp/features/home/data/models/book_model/searchInfo.dart';
 import 'package:bookyapp/features/home/data/models/book_model/volume_info.dart';
+import 'package:bookyapp/features/home/domain/entites/book_entity.dart';
 
 import 'accessInfo.dart';
 
-class BookModel {
+class BookModel extends BookEntity {
   String? kind;
   String? id;
   String? etag;
@@ -23,9 +24,24 @@ class BookModel {
       this.volumeInfo,
       this.saleInfo,
       this.accessInfo,
-      this.searchInfo});
+      this.searchInfo})
+      : super(
+            imagePath: volumeInfo?.imageLinks?.thumbnail ?? '',
+            title: volumeInfo?.title ?? 'Unknown Title',
+            authorName: volumeInfo?.authors?.first ?? 'Unknown Author',
+            price: 0.0,
+            rating: volumeInfo?.averageRating ?? 0.0,
+            bookId: id ?? '');
 
-  BookModel.fromJson(Map<String, dynamic> json) {
+  BookModel.fromJson(Map<String, dynamic> json)
+      : super(
+            imagePath: json['volumeInfo']?['imageLinks']?['thumbnail'] ?? '',
+            title: json['volumeInfo']?['title'] ?? 'Unknown Title',
+            authorName: (json['volumeInfo']?['authors'] as List?)?.first ??
+                'Unknown Author',
+            price: 0.0,
+            rating: (json['volumeInfo']?['averageRating'] ?? 0).toDouble(),
+            bookId: json['id'] ?? '') {
     kind = json['kind'];
     id = json['id'];
     etag = json['etag'];
