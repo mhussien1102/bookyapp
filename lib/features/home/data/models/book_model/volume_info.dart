@@ -15,8 +15,8 @@ class VolumeInfo {
   int? pageCount;
   String? printType;
   List<String>? categories;
-  int? averageRating;
-  int? ratingsCount;
+  num? averageRating;
+  num? ratingsCount;
   String? maturityRating;
   bool? allowAnonLogging;
   String? contentVersion;
@@ -68,8 +68,8 @@ class VolumeInfo {
     pageCount = json['pageCount'];
     printType = json['printType'];
     categories = json['categories'].cast<String>();
-    averageRating = json['averageRating'];
-    ratingsCount = json['ratingsCount'];
+    averageRating = json['averageRating'] as num;
+    ratingsCount = json['ratingsCount'] as num;
     maturityRating = json['maturityRating'];
     allowAnonLogging = json['allowAnonLogging'];
     contentVersion = json['contentVersion'];
