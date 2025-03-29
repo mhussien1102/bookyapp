@@ -27,11 +27,11 @@ class BookModel extends BookEntity {
       this.searchInfo})
       : super(
             imagePath: volumeInfo?.imageLinks?.thumbnail ?? '',
-            title: volumeInfo?.title ?? 'Unknown Title',
+            title: volumeInfo!.title!,
             authorName: volumeInfo?.authors?.first ?? 'Unknown Author',
             price: 0.0,
-            rating: volumeInfo?.averageRating ?? 0.0,
-            bookId: id ?? '');
+            rating: volumeInfo.averageRating!,
+            bookId: id!);
 
   BookModel.fromJson(Map<String, dynamic> json)
       : super(
