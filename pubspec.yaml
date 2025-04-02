@@ -39,9 +39,13 @@ dependencies:
   go_router: ^14.8.0
   dartz: ^0.10.1
   dio: ^5.8.0+1
+  hive:
+  hive_flutter: ^1.1.0
 
 
 dev_dependencies:
+  hive_generator:
+  build_runner: 
   flutter_test:
     sdk: flutter
 
