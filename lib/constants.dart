@@ -5,3 +5,4 @@ const primaryDuration = Duration(seconds: 1);
 const kGtSect = 'GT Sectra Fine';
 
 const kFeaturedBox = "featuredBox";
+const kNewestBox = "newestBox";
