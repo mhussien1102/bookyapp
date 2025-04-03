@@ -31,11 +31,12 @@ class HomeRepoImp extends HomeRepo {
   @override
   Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
     try {
-      var bookList = homeLocalDataSource.fetchNewestBooks();
-      if (bookList.isNotEmpty) {
-        return right(bookList);
+      List<BookEntity> books;
+      books = homeLocalDataSource.fetchNewestBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var books = await homeRemoteDataSource.fetchNewestBooks();
+      books = await homeRemoteDataSource.fetchNewestBooks();
       return right(books);
     } catch (e) {
       return left(Failure());
