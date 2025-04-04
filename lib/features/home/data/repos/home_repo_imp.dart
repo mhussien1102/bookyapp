@@ -7,6 +7,7 @@ import 'package:dio/dio.dart';
 
 import '../../domain/repo/home_repo.dart';
 import '../data_sources/home_local_data_source.dart';
+import '../data_sources/home_remote_data_sources.dart';
 
 class HomeRepoImp extends HomeRepo {
   final HomeRemoteDataSources homeRemoteDataSource;

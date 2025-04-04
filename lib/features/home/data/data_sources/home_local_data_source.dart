@@ -3,12 +3,12 @@ import 'package:hive/hive.dart';
 
 import '../../../../constants.dart';
 
-abstract class HomeRemoteDataSources {
+abstract class HomeLocalDataSources {
   List<BookEntity> fetchFeaturedBooks();
   List<BookEntity> fetchNewestBooks();
 }
 
-class HomeLocalDataSources extends HomeRemoteDataSources {
+class HomeLocalDataSourcesImpl extends HomeLocalDataSources {
   @override
   List<BookEntity> fetchFeaturedBooks() {
     var box = Hive.box<BookEntity>(kFeaturedBox);
