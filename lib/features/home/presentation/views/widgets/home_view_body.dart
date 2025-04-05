@@ -1,11 +1,14 @@
 import 'package:bookyapp/core/utils/assets.dart';
 import 'package:bookyapp/core/utils/style.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:bookyapp/features/home/presentation/views/widgets/best_seller_list_view_bloc_builder.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/custom_list_view_item.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/featured_list_view.dart';
+import 'package:bookyapp/features/home/presentation/views/widgets/featured_list_view_bloc_bulider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeView extends StatelessWidget {
@@ -23,7 +26,7 @@ class HomeView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: CustomAppBar(),
               ),
-              FeaturedListView(),
+              FeaturedListViewBlocBuilder(),
               SizedBox(
                 height: 50,
               ),
@@ -44,7 +47,7 @@ class HomeView extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: BestSellerListView(),
+            child: BestSellerListViewBlocBuilder(),
           ),
         )
       ],

@@ -6,10 +6,13 @@ import 'package:bookyapp/features/home/presentation/views/widgets/similiar_list_
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/style.dart';
+import '../../../domain/entites/book_entity.dart';
 import 'custom_list_view_item.dart';
 
 class BookViewDetailsBody extends StatelessWidget {
-  const BookViewDetailsBody({super.key});
+  const BookViewDetailsBody({super.key, required this.book});
+
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,9 @@ class BookViewDetailsBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                BookDetailsSections(),
+                BookDetailsSections(
+                  book: book,
+                ),
                 const SizedBox(
                   height: 37,
                 ),
@@ -53,8 +58,8 @@ class BookViewDetailsBody extends StatelessWidget {
 }
 
 class BookDetailsSections extends StatelessWidget {
-  const BookDetailsSections({super.key});
-
+  const BookDetailsSections({super.key, required this.book});
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -64,7 +69,9 @@ class BookDetailsSections extends StatelessWidget {
         CustomBookDeatialsAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: CustomListViewItem(),
+          child: CustomListViewItem(
+            image: " ",
+          ),
         ),
         SizedBox(
           height: 43,
@@ -83,6 +90,7 @@ class BookDetailsSections extends StatelessWidget {
         ),
         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
+          book: book,
         ),
       ],
     );

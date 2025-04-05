@@ -39,11 +39,13 @@ class SearchResultListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         shrinkWrap: true,
-        itemCount: 15,
+        itemCount: 10,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            child: BookListViewItem(),
+            child: BookListViewItem(
+              book: [][index],
+            ),
           );
         });
   }

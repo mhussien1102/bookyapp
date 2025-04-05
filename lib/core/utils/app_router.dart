@@ -4,12 +4,15 @@ import 'package:bookyapp/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/domain/entites/book_entity.dart';
 import '../../features/home/presentation/views/home.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 
 abstract class AppRouter {
+  final BookEntity book;
   static const kbook = '/bookviewdeatils';
   static const kSearchView = '/searchView';
+  AppRouter(this.book);
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
@@ -29,7 +32,8 @@ abstract class AppRouter {
       GoRoute(
         path: kbook,
         builder: (BuildContext context, GoRouterState state) {
-          return const BookViewDeatils();
+          final book = state.extra as BookEntity;
+          return BookViewDeatils(book: book);
         },
       ),
     ],
