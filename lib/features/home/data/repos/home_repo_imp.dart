@@ -21,11 +21,12 @@ class HomeRepoImp extends HomeRepo {
       {int pageNumber = 0}) async {
     try {
       List<BookEntity> bookList;
-      bookList = homeLocalDataSource.fetchFeaturedBooks();
+      bookList = homeLocalDataSource.fetchFeaturedBooks(pageNumber: pageNumber);
       if (bookList.isNotEmpty) {
         return right(bookList);
       }
-      bookList = await homeRemoteDataSource.fetchFeaturedBooks();
+      bookList =
+          await homeRemoteDataSource.fetchFeaturedBooks(pageNumber: pageNumber);
       return right(bookList);
     } catch (e) {
       if (e is DioException) {

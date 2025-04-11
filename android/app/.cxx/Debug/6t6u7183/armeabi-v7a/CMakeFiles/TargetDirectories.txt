@@ -1,0 +1,2 @@
+C:/Users/LAPTOP/StudioProjects/bookyapp/android/app/.cxx/Debug/6t6u7183/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/LAPTOP/StudioProjects/bookyapp/android/app/.cxx/Debug/6t6u7183/armeabi-v7a/CMakeFiles/rebuild_cache.dir
