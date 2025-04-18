@@ -6,7 +6,7 @@ import 'package:bookyapp/features/home/presentation/views/widgets/best_seller_li
 import 'package:bookyapp/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/custom_list_view_item.dart';
 import 'package:bookyapp/features/home/presentation/views/widgets/featured_list_view.dart';
-import 'package:bookyapp/features/home/presentation/views/widgets/featured_list_view_bloc_bulider.dart';
+import 'package:bookyapp/features/home/presentation/views/widgets/featured_list_view_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: CustomAppBar(),
               ),
-              FeaturedListViewBlocBuilder(),
+              FeaturedListViewBlocConsumer(),
               SizedBox(
                 height: 50,
               ),
